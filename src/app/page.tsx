@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="">
-      <header className="w-full h-[86px] grid place-items-center py-[48px]">
+      <header className="w-full h-[86px] grid place-items-center py-12">
         <div className="w-full max-w-[1296px] flex items-center justify-between">
           <div className="">
             <h1 className="text-[30px]">
