@@ -1,7 +1,10 @@
 'use client'
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [olderTheme, setOlderTheme] = useState(false)
 
   const IMAGES = [
     {id: 0, src: '/avatar.png'},
@@ -10,9 +13,25 @@ export default function Home() {
     {id: 3, src: '/avatar.png'},
   ]
 
+  const handleScrollPage = (e: any) => {
+    if (e.deltaY < 0) {
+     return setOlderTheme(false)
+    }      
+    setOlderTheme(true)
+  };
+
+  useEffect(() => {
+    window.document.addEventListener('wheel',(e)=> handleScrollPage(e));
+  
+    return () => {
+      window.document.removeEventListener('wheel', handleScrollPage);
+    };
+  }, [olderTheme]);
+
   return (
-    <main className="">
-      <header className="w-full h-[86px] grid place-items-center py-[48px]">
+    <main>
+      <div className={`duration-300 ${olderTheme && 'bg-black absolute top-0 h-[100vh] w-full'}`}></div>
+      <header className={`w-full duration-300 h-[86px] grid place-items-center py-[48px] ${olderTheme ? 'opacity-0 pointer-events-none': 'opacity-1 pointer-events-auto'}`}>
         <motion.div
           initial={{y: -30, width: '120%'}}
           whileInView={{y: 0, width: '100%'}}
@@ -75,8 +94,8 @@ export default function Home() {
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
               transition={{duration: 1.6, delay: 0.6}}
-              className="text-[56px] font-light uppercase">
-              A próxima geração de cosméticos.
+              className={`text-[56px] font-light uppercase ${olderTheme ? 'text-white text-center font-light': 'text-black'}`}>
+              {olderTheme ? 'Aproveite agora e dê um tom natural à sua pele.' : 'A próxima geração de cosméticos.'}
             </motion.h2>
 
             <motion.h1 
@@ -84,7 +103,7 @@ export default function Home() {
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
               transition={{duration: 1.6, delay: 0.6}}
-              className="text-[176px] font-semibold uppercase">
+              className={`text-[176px] z-[1] font-semibold uppercase ${olderTheme ? 'text-white': 'text-black'}`}>
               CLEAR REIGN
             </motion.h1>
           </div>
@@ -97,7 +116,7 @@ export default function Home() {
               viewport={{once: true}}
               transition={{duration: 1.2, delay: 0.6}}
               src="/folha1.png" width={185} height={166.75} 
-              className="absolute left-[35%] top-[48%] translate-x-[-50%]" 
+              className={`absolute duration-[1.2s] left-[35%] top-[48%] translate-x-[-50%] ${olderTheme && 'left-[-6%] z-[0]'} `}
             />
             <motion.img 
               initial={{opacity: 0, y: '50%'}}
@@ -105,7 +124,7 @@ export default function Home() {
               viewport={{once: true}}
               transition={{duration: 1.6, delay: 0.6}}
               src="/serum.png" width={358.8} height={642} 
-              className="absolute left-[32%] translate-x-[-50%]" 
+              className={`absolute z-20 flex left-[32%] duration-300 translate-x-[-50%] ${olderTheme && 'hidden'}`} 
             />
             <motion.img
               initial={{opacity: 0, scale: 0}}
@@ -113,18 +132,18 @@ export default function Home() {
               viewport={{once: true}}
               transition={{duration: 1.2, delay: 0.6}}
               src="/folha.png" width={365} height={329} 
-              className="absolute left-[50%] top-[40%] translate-x-[-50%]" 
+              className={`absolute z-30 duration-[1.2s] left-[50%] top-[40%] translate-x-[-50%] ${olderTheme && 'left-[68%] top-[45%]'}`}
             />
           </div>
 
 
-          <div className="w-full flex justify-between items-end z-10 absolute">
+          <div className={`w-full flex justify-between items-end z-10 absolute ${olderTheme ? 'hidden': 'flex'}`}>
             <div className="flex flex-col gap-4">
               <div className="max-w-[220px] w-full">
                 <h3 className="text-[22px] font-bold">+13,000 Vendas</h3>
                 <p className="text-xs leading-[130%] uppercase">Construímos os cosméticos 100% naturais para todos.</p>
               </div>
-              <div className="">
+              <div className=''>
                 {IMAGES.map(({id, src})=>(
                   <motion.img
                    key={id}
