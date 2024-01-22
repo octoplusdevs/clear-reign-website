@@ -19,7 +19,8 @@ export const Headline = ({ visible }: PropsType) => {
           whileInView={{opacity: 1, x: 0}}
           viewport={{once: true}}
           transition={{duration: 1.6, delay: 0.6}}
-          className={`text-[56px] font-thin uppercase ${visible ? 'text-white text-center': 'text-black'}`}>
+          className={`text-[56px] font-light uppercase 
+           ${visible && 'text-white text-center font-thin'}`}>
           {visible ? 'Aproveite agora e dê um tom natural à sua pele.' : 'A próxima geração de cosméticos.'}
         </motion.h2>
 
@@ -43,7 +44,7 @@ export const Headline = ({ visible }: PropsType) => {
           transition={{delay: 0.6}}
           src="/folha1.png" width={185} height={166.75} 
           className={`absolute duration-1000 left-[35%] top-[48%] translate-x-[-50%] 
-          ${visible && 'left-[0] z-[0]'} `}
+          ${visible && 'left-[-1%]  z-[0]'} `}
         />
         <motion.img 
           initial={{opacity: 0, y: '50%'}}
