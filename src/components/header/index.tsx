@@ -14,7 +14,7 @@ export const Header = ({visible}: PropsType) => {
 
   return(
     <header
-      className={`w-full duration-300 h-[86px] grid place-items-center py-[48px] 
+      className={`w-full duration-300 h-[86px] grid place-items-center px-4 py-[48px] 
       ${visible ? 'opacity-0 pointer-events-none': 'opacity-1 pointer-events-auto'}`}
     >
         <motion.div
@@ -51,7 +51,7 @@ export const Header = ({visible}: PropsType) => {
               whileInView={{opacity: 1, y: 0}}
               viewport={{once: true}}
               transition={{duration: 1.6, delay: 0.6}}
-              className="flex justify-start items-start gap-6">
+              className="hidden sm:flex justify-start items-start gap-6">
                 {MENU.map(({id, content, href})=>(
                   <Link 
                     key={id}
