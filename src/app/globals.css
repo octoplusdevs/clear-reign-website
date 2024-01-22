@@ -19,7 +19,7 @@
 body {
   color: #000;
   background: #d4fff7;
-  animation-duration: 3s;
+  transition-duration: 0.4s;
 }
 
 body.active{
