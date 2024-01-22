@@ -13,13 +13,13 @@ export const Headline = ({ visible }: PropsType) => {
   return(
     <section className="flex justify-center items-center">
     <div className="w-full max-w-[1296px] relative">
-      <div className="flex justify-center items-center flex-col my-[118px] gap-[48px] ">
+      <div className="flex justify-center items-center flex-col my-[68px] gap-[0] ">
         <motion.h2 
           initial={{opacity: 0, x: '-100%'}}
           whileInView={{opacity: 1, x: 0}}
           viewport={{once: true}}
           transition={{duration: 1.6, delay: 0.6}}
-          className={`text-[56px] font-thin uppercase ${visible ? 'text-white text-center': 'text-black'}`}>
+          className={`text-[24px] font-thin uppercase ${visible ? 'text-white text-center': 'text-black'}`}>
           {visible ? 'Aproveite agora e dê um tom natural à sua pele.' : 'A próxima geração de cosméticos.'}
         </motion.h2>
 
@@ -28,21 +28,21 @@ export const Headline = ({ visible }: PropsType) => {
           whileInView={{opacity: 1, x: 0}}
           viewport={{once: true}}
           transition={{duration: 1.6, delay: 0.6}}
-          className={`text-[176px] z-[1] font-semibold uppercase ${visible ? 'text-white': 'text-black'}`}>
+          className={`text-[100px] z-[1] tracking-[16px] font-semibold uppercase ${visible ? 'text-white': 'text-black'}`}>
           CLEAR REIGN
         </motion.h1>
       </div>
 
       <div 
-        className="w-full h-[642px] flex justify-center items-center absolute top-[200px]"
+        className="w-full h-[152px] flex justify-center items-center absolute top-[230px]"
       >
         <motion.img
           initial={{opacity: 0, scale: 0}}
           whileInView={{opacity: 1, scale: 1.5}}
           viewport={{once: true}}
           transition={{delay: 0.6}}
-          src="/folha1.png" width={185} height={166.75} 
-          className={`absolute duration-1000 left-[35%] top-[48%] translate-x-[-50%] 
+          src="/folha1.png" width={85} height={166.75} 
+          className={`absolute duration-1000 left-[42%] top-[48%] translate-x-[-50%] 
           ${visible && 'left-[0] z-[0]'} `}
         />
         <motion.img 
@@ -50,15 +50,15 @@ export const Headline = ({ visible }: PropsType) => {
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
           transition={{duration: 1.6, delay: 0.6}}
-          src="/serum.png" width={358.8} height={642} 
-          className={`absolute z-20 flex left-[32%] translate-x-[-50%] ${visible && 'hidden'}`} 
+          src="/serum.png" width={200.8} height={122} 
+          className={`absolute z-20 flex left-[39%] translate-x-[-50%] ${visible && 'hidden'}`} 
         />
         <motion.img
           initial={{opacity: 0, scale: 0}}
           whileInView={{opacity: 1, scale: 1.2}}
           viewport={{once: true}}
           transition={{delay: 0.6}}
-          src="/folha.png" width={365} height={329} 
+          src="/folha.png" width={165} height={129} 
           className={`absolute duration-1000  z-30 left-[50%] top-[40%] translate-x-[-50%] ${visible && 'left-[68%] top-[45%]'}`}
         />
       </div>
@@ -94,9 +94,9 @@ export const Headline = ({ visible }: PropsType) => {
 
         <Link 
           href="#" 
-          className="bg-black px-6 max-h-[64px] py-4 rounded-lg flex gap-2 items-center justify-center cursor-pointer hover:bg-slate-900 transition-colors"
+          className="bg-black px-6 max-h-[64px] py-[14px] rounded-lg flex gap-2 items-center justify-center cursor-pointer hover:bg-slate-900 transition-colors"
         >
-          <span className="text-white uppercase text-[22px]">
+          <span className="text-white uppercase text-[18px]">
             Explorar
           </span>
           <img src="/ArrowRight.png" alt="" />

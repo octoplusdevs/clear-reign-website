@@ -30,7 +30,7 @@ export default function Home() {
   }, [hideElements]);
 
   return (
-    <main>
+    <main className="overflow-x-hidden h-screen">
       <Header visible={hideElements}/>
       <Headline visible={hideElements}/>
     </main>
