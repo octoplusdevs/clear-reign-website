@@ -18,8 +18,14 @@
 
 body {
   color: #000;
-  background: #d4fff7
+  background: #d4fff7;
+  animation-duration: 3s;
 }
+
+body.active{
+  background-color: #000;
+}
+
 
 @layer utilities {
   .text-balance {
