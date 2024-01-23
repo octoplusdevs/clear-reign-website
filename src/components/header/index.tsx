@@ -55,7 +55,7 @@ export const Header = ({visible}: PropsType) => {
                 {MENU.map(({id, content, href})=>(
                   <Link 
                     key={id}
-                    className={`text-base font-extrabold uppercase ${id != 0 && "font-normal"}`} 
+                    className={`text-base font-normal uppercase ${id === 0 && "font-semibold"}`} 
                     href="#"
                   >
                     {content}

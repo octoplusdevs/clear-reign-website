@@ -70,7 +70,7 @@ export const Headline = ({ visible }: PropsType) => {
           transition={{delay: 0.6}}
           src="/folha1.png" width={85} height={166.75} 
           className={`absolute duration-1000 z-0 top-[48%] translate-x-[-50%] left-[42%] 
-            ${visible && 'left-[15%] top-[4%]'}`}
+            ${visible && 'left-[16%] top-[4px]'}`}
         />
         <motion.img 
           initial={{visibility: "hidden", y: '50%'}}
@@ -88,7 +88,7 @@ export const Headline = ({ visible }: PropsType) => {
           src="/folha.png" width={165} height={129} 
           className={`absolute duration-1000 w-full max-w-[165px] z-30 left-[50%] 
             top-[40%] translate-x-[-50%] 
-            ${visible && 'left-[67%] top-0'}`}
+            ${visible && 'left-[67%] top-[-6px]'}`}
         />
       </div>
 
