@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [hideElements, setHideElements] = useState(false)
 
+
   const handleScrollPage = (e: WheelEvent) => {
     if (e.deltaY < 0) {
      return setHideElements(false)
